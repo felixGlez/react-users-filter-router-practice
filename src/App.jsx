@@ -8,6 +8,8 @@ import Main from './components/main/Main';
 import Users from './components/users/Users';
 import { GlobalStyles } from './styles/global-styles';
 import { USERS } from './constants/users';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './router/Router';
 
 const App = () => {
 	const [activeUsers, setActiveUsers] = useState(false);
@@ -20,19 +22,22 @@ const App = () => {
 
 	return (
 		<>
-			<GlobalStyles />
-			<Main>
-				<h1>Listado de usuarios</h1>
-				<Filters
-					activeUsers={activeUsers}
-					setActiveUsers={setActiveUsers}
-					sortedUsers={sortedUsers}
-					setSortedUsers={setSortedUsers}
-					searchedUsers={searchedUsers}
-					setSearchedUsers={setSearchedUsers}
-				/>
-				<Users filteredUsers={filteredUsers} />
-			</Main>
+			<BrowserRouter>
+				<GlobalStyles />
+				<Main>
+					<h1>Listado de usuarios</h1>
+					<Filters
+						activeUsers={activeUsers}
+						setActiveUsers={setActiveUsers}
+						sortedUsers={sortedUsers}
+						setSortedUsers={setSortedUsers}
+						searchedUsers={searchedUsers}
+						setSearchedUsers={setSearchedUsers}
+					/>
+					<Users filteredUsers={filteredUsers} />
+				</Main>
+				<Router />
+			</BrowserRouter>
 		</>
 	);
 };

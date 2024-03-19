@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
 	StyledStatus,
 	StyledUserAvatar,
@@ -20,7 +21,9 @@ const Users = ({ filteredUsers }) => {
 					<StyledStatus $isActive={user.active}>
 						{user.active ? 'Activo' : 'Inactivo'}
 					</StyledStatus>
-					<button>Ver Detalles</button>
+					<button>
+						<Link to={`/${user.userId}`}>Ver Detalles</Link>
+					</button>
 				</StyledUserCard>
 			))}
 		</StyledUsersContainer>

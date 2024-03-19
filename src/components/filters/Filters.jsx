@@ -3,9 +3,7 @@ import { StyledCheckboxContainer, StyledFiltersContainer } from './styles';
 const Filters = ({
 	activeUsers,
 	setActiveUsers,
-	sortedUsers,
 	setSortedUsers,
-	searchedUsers,
 	setSearchedUsers
 }) => {
 	return (
