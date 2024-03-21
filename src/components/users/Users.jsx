@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
 	StyledStatus,
 	StyledUserAvatar,
@@ -9,6 +9,9 @@ import {
 } from './styles';
 
 const Users = ({ filteredUsers }) => {
+	// Hook para navegar desde cualquier elemento HTML
+	const navigate = useNavigate();
+
 	return (
 		<StyledUsersContainer>
 			{filteredUsers.map(user => (
@@ -24,6 +27,8 @@ const Users = ({ filteredUsers }) => {
 					<button>
 						<Link to={`/${user.userId}`}>Ver Detalles</Link>
 					</button>
+					{/* <button onClick={() => navigate(`/${user.userId}`)}> Ver Detalles
+					</button> */}
 				</StyledUserCard>
 			))}
 		</StyledUsersContainer>
