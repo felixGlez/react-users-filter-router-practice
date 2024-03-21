@@ -9,7 +9,7 @@ import {
 } from './styles';
 
 const Users = ({ filteredUsers }) => {
-	// Hook para navegar desde cualquier elemento HTML que no sea un <a>.
+	// Hook para navegar desde cualquier elemento HTML que no sea un <a>. Navigate es lo más común.
 	const navigate = useNavigate();
 
 	return (
